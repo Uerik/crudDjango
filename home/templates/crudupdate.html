@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+
+{% block title %}
+  CRUD - Update
+{% endblock %}
+
+
+{% block content %}
+<div class="mx-auto p-2" style="width: 200px;">
+  {%for i in bas%}
+        {%if i.id == basID.id%}
+          <h1>Update</h1>
+          <form action="{% url 'crudupdate' i.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="nomeformupdate" id="" placeholder="{{i.nome}}" ></br>
+            <input type="tel" name="telefoneformupdate" id="" placeholder="{{i.telefone}}" ></br>
+            <input type="submit" value="Submit">
+          </form> 
+        {%endif%}
+  {%endfor%}
+</div>
+{% endblock %}

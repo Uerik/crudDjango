@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+  CRUD - Create
+{% endblock %}
+
+
+{% block content %}
+<div class="mx-auto p-2" style="width: 200px;">
+  <h1>Create</h1>
+  <form action="{% url 'crudcreate' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="nomeform" id="" placeholder="Nome" maxlength='50'></br>
+    <input type="tel" name="telefoneform" id="" placeholder="(00) 0 0000-0000" maxlength='11' ></br>
+    <input type="submit" value="Submit">
+  </form> 
+</div>
+{% endblock %}

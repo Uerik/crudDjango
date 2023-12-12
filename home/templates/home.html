@@ -1,0 +1,28 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+
+{% block content %}
+<div class="mx-auto p-2" style="width: 200px;">
+    <h1>Home</h1> 
+      <table class="table table-bordered">
+          <tr>
+            <th >Nome</th>
+            <th>Telefones</th>
+          </tr>
+        {% for x in bas %}
+          <tr>
+            <td>{{x.nome}}</td>
+            <td>{{x.telefone}}</td>
+            <td> <a href="{% url 'crudupdate' x.id %}">Update</a></td>
+            <td><a href="{% url 'crudDelete' x.id %}">Delete</a>  </td>
+          </tr>
+          {%endfor%}
+      </table>
+    </div >
+
+  
+{% endblock %}
